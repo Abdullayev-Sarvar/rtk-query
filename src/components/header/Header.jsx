@@ -1,3 +1,4 @@
+import { AiOutlineLike } from "react-icons/ai";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -161,6 +162,13 @@ const Header = () => {
           </form>
 
           <ul className="flex gap-6">
+            <li className="text-white relative">
+              <Link to={'/favorite'}>
+                <span className="absolute top-0 right-0 text-2xl text-white bg-red-600 rounded-full px-2 py-1">
+                  <AiOutlineLike />
+                </span>
+              </Link>
+            </li>
             {token ? (
               <Link to={"/profile"}>
                 <img
